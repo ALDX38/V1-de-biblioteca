@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOCE É BETA</title>
+  <link rel="stylesheet" href="styler.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="nomeUsuario"></h1>
+    <div class="status-box">
+      Status: <span id="statusTexto"></span>
+    </div>
+    <button onclick="voltar()">Voltar</button>
+  </div>
+
+  <script>
+    function formatarNome(nome) {
+      return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+    }
+
+    function voltar() {
+      window.location.href = "index.html";
+    }
+
+    const usuario = localStorage.getItem('usuario');
+
+    if (usuario && usuario.toLowerCase() === "angelo") {
+      document.getElementById('nomeUsuario').textContent = "Angelo"; 
+      document.getElementById('statusTexto').textContent = "EM EXTASE COM 'Meu Lugar'";
+    } else if (usuario) {
+      document.getElementById('nomeUsuario').textContent = formatarNome(usuario);
+      document.getElementById('statusTexto').textContent = "Aprovado?";
+    } else {
+      document.getElementById('nomeUsuario').textContent = "Usuário não encontrado";
+    }
+  </script>
+</body>
+</html>
