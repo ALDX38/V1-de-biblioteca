@@ -27,3 +27,7 @@ document.getElementById('btnEntrar').addEventListener('click', function () {
         alert('Usuário ou senha incorretos.');
     }
 });
+esqueciSenhaLink.addEventListener('click', (evento) => {
+    evento.preventDefault(); // Evita que a página recarregue
+    alert('Burro!!!!!!!!!!.');
+});
